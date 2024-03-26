@@ -53,17 +53,17 @@ return {
                 { name = 'path' },
                 { name = 'luasnip' }
             }),
-			formatting = {
-				format = lspkind.cmp_format({
-					mode = "symbol_text",
-					menu = {
-						nvim_lsp = '[LSP]',
-						buffer = '[Buffer]',
-						path = '[Path]',
-						luasnip = '[US]'
-					}
-				})
-			}
+            formatting = {
+            	format = lspkind.cmp_format({
+            		mode = "symbol_text",
+            		menu = {
+            			nvim_lsp = '[LSP]',
+            			buffer = '[Buffer]',
+            			path = '[Path]',
+            			luasnip = '[US]'
+            		}
+            	})
+            }
 
         })
 
