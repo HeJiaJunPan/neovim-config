@@ -20,7 +20,16 @@ return {
     {
         "goolord/alpha-nvim",
         config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+            local dashboard = require("alpha.themes.dashboard")
+            dashboard.section.buttons.val = {
+                dashboard.button("e", "  New file", "<cmd>ene <CR>"),
+                dashboard.button("f", "󰈞  Find file", "<cmd>lua require('telescope.builtin').find_files()<cr>"),
+                dashboard.button("r", "󰊄  Recent files", "<cmd>lua require('telescope.builtin').oldfiles()<cr>"),
+                dashboard.button("g", "󰈬  Find text", "<cmd>lua require('telescope.builtin').live_grep()<cr>"),
+                dashboard.button("s", "  Restore Session", "<cmd>lua require('persistence').load()<cr>"),
+                dashboard.button("q", "  Quit", "<cmd>qa<cr>"),
+            }
+            require("alpha").setup(dashboard.config)
         end
     },
     {
