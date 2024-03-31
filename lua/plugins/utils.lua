@@ -39,6 +39,32 @@ return {
                 end,
                 desc = "Toggle Flash Search",
             },
+            {
+                -- 模拟easymotain：向上跳转
+                "<leader><leader>k",
+                mode = {"n"},
+                function()
+                    require("flash").jump({
+                        search = { forward = false, wrap = false, mode = "search", max_length = 0 },
+                        label = { after = { 0, 0 } },
+                        pattern = "^"
+                    })
+                end,
+                desc = "easymotain up"
+            },
+            {
+                -- 模拟easymotain：向下跳转
+                "<leader><leader>j",
+                mode = {"n"},
+                function()
+                    require("flash").jump({
+                        search = { forward = true, wrap = false, mode = "search", max_length = 0 },
+                        label = { after = { 0, 0 } },
+                        pattern = "^"
+                    })
+                end,
+                desc = "easymotain down"
+            },
         },
         config = true
     },
