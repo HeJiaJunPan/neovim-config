@@ -6,11 +6,11 @@ return {
             'nvim-telescope/telescope-fzf-native.nvim',
             build = 'make',
         },
-        "jonarrien/telescope-cmdline.nvim"
+        -- "jonarrien/telescope-cmdline.nvim"
     },
     keys = {
-        { '<leader>?',       "<cmd>lua require('telescope.builtin').oldfiles()<cr>" },
-        { "<leader><space>", "<cmd>lua require('telescope.builtin').buffers({ sort_mru = true })<cr>" },
+        { '<leader>fr',       "<cmd>lua require('telescope.builtin').oldfiles()<cr>" },
+        { "<leader>fb", "<cmd>lua require('telescope.builtin').buffers({ sort_mru = true })<cr>" },
         { "<leader>/",
             function()
                 -- You can pass additional configuration to telescope to change theme, layout, etc.
@@ -28,7 +28,7 @@ return {
         { '<leader>qf', "<cmd>lua require('telescope.builtin').quickfix()<cr>" },
         { '<leader>km', "<cmd>lua require('telescope.builtin').keymaps()<cr>" },
         { '<c-p>',      "<cmd>lua require('telescope.builtin').commands()<cr>" },
-        { ':', "<cmd>Telescope cmdline<cr>", desc = 'Cmdline' },
+        -- { ':', "<cmd>Telescope cmdline<cr>", desc = 'Cmdline' },
     },
     config = function()
         require('telescope').setup {
@@ -40,7 +40,7 @@ return {
                     case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                     -- the default case_mode is "smart_case"
                 },
-                cmdline = {}
+                -- cmdline = {}
             }
         }
         -- require('telescope').load_extension('fzf')
