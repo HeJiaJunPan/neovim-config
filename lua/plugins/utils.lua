@@ -55,4 +55,11 @@ return {
         event = "VeryLazy",
         config = true,
     },
+    {
+        -- gcc:行注释
+        -- gbc:块注释
+        "numToStr/Comment.nvim",
+        event = "VeryLazy",
+        config = true
+    },
 }
