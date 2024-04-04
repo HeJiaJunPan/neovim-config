@@ -17,9 +17,9 @@ return {
     },
     config = function()
         local cmp = require('cmp')
-		local lspkind = require('lspkind')
+        local lspkind = require('lspkind')
         -- 懒加载第三方代码片段friendly-snippets
-		require("luasnip.loaders.from_vscode").lazy_load()
+        require("luasnip.loaders.from_vscode").lazy_load()
         
         cmp.setup({
             snippet = {
