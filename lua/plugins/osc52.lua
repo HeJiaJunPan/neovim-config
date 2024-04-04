@@ -11,18 +11,27 @@ local function paste()
     return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
 end
 
+-- 如果当前版本不支持内置OSC52，则使用插件添加OSC52功能
 vim.opt.clipboard = 'unnamedplus'
--- 用provider-clipboard配置剪贴板
-vim.g.clipboard = {
-    name = 'osc52',
-    copy = {['+'] = copy, ['*'] = copy},
-    paste = {['+'] = paste, ['*'] = paste},
-}
+local ok, clipboard = pcall(require, 'vim.ui.clipboard.osc52')
+if ok then
+    vim.g.clipboard = {
+        name = 'osc52',
+        copy = {['+'] = clipboard.copy('+'), ['*'] = clipboard.copy('*')},
+        paste = {['+'] = clipboard.paste('+'), ['*'] = clipboard.paste('*')}
+    }
 
--- 利用包管理器下载插件并加载
--- neovim 10.原生支持osc52，0.95暂时不支持osc52，需要使用插件
-return {
-    'ojroques/nvim-osc52',
-    event = 'VeryLazy',
-    config = true
-}
+    return {}
+else
+    vim.g.clipboard = {
+        name = 'osc52',
+        copy = {['+'] = copy, ['*'] = copy},
+        paste = {['+'] = paste, ['*'] = paste},
+    }
+
+    return {
+        'ojroques/nvim-osc52',
+        event = 'VeryLazy',
+        config = true
+    }
+end
