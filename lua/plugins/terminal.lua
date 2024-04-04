@@ -1,6 +1,9 @@
 return {
     'akinsho/toggleterm.nvim',
-    event = 'VeryLazy',
+    -- event = 'VeryLazy',
+    keys = {
+        {'<c-t>', '<cmd>ToggleTerm<cr>'}
+    },
     opts = {
         open_mapping = '<c-t>',
         hide_numbers = true,
