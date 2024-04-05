@@ -88,4 +88,13 @@ return {
         event = "VeryLazy",
         config = true
     },
+    {
+        -- ys[文本对象][环绕文本对象]:为指定的文本对象添加环绕文本对象（',",[,{）
+        -- ds[环绕文本对象]:删除环绕文本对象
+        -- cs[待替换环绕文本对象][新环绕文本对象]:更换环绕文本对象
+        -- dsf:删除函数名，仅保留函数参数
+        "kylechui/nvim-surround",
+        event = "VeryLazy",
+        config = true
+    }
 }
