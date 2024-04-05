@@ -1,8 +1,10 @@
+-- opt是vim内置选项，不能用户新建选项
+-- g是全局变量，用户可以新建变量
 local option = vim.opt
 local buffer = vim.b
 local global = vim.g
 
--- Globol Settings --
+-- Option Settings --
 option.showmode = false
 option.backspace = { 'indent', 'eol', 'start' }
 option.tabstop = 4
@@ -40,7 +42,8 @@ buffer.fileenconding = 'utf-8'
 
 -- Global Settings --
 global.mapleader = ' '
-
+-- 可选，LuaSnip用户自定义代码片段
+global.userSnippet = vim.fn.expand('$HOME/.config/nvim/lua/snippet')
 -- autocmd Settings --
 -- 插入模式使用绝对行号
 vim.api.nvim_create_autocmd('InsertEnter', {
