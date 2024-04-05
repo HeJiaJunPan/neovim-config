@@ -44,7 +44,8 @@ buffer.fileenconding = 'utf-8'
 global.mapleader = ' '
 -- 可选，LuaSnip用户自定义代码片段
 global.userSnippet = vim.fn.expand('$HOME/.config/nvim/lua/snippet')
--- autocmd Settings --
+
+-- Autocmd Settings --
 -- 插入模式使用绝对行号
 vim.api.nvim_create_autocmd('InsertEnter', {
     pattern = '*',
