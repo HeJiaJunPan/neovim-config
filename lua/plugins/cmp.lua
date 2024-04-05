@@ -23,7 +23,16 @@ return {
         local cmp = require('cmp')
         local lspkind = require('lspkind')
         -- 懒加载第三方代码片段friendly-snippets
-        require("luasnip.loaders.from_vscode").lazy_load()
+        if vim.g.userSnippet == nil then
+            require('luasnip.loaders.from_vscode').lazy_load()
+        else
+            require('luasnip.loaders.from_vscode').lazy_load({
+                paths = {
+                    vim.fn.stdpath("data") .. '/lazy/friendly-snippets',
+                    vim.g.userSnippet
+                } 
+            })
+        end
         
         cmp.setup({
             snippet = {
