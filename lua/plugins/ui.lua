@@ -38,5 +38,31 @@ return {
         config = function()
             require('illuminate').configure()
         end
+    },
+    {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify'
+        },
+        config = function()
+            require('notify').setup({
+                -- 动画效果："fade", "slide", "fade_in_slide_out", "static"
+                stages = 'static',
+                render = 'default',
+                background_colour = "Normal",
+                -- 日志等级
+                level = 'TRACE',
+            })
+            
+            require('noice').setup({
+                lsp = {
+                    -- 为避免影响性能，关闭lsp.progress功能
+                    progress = {enabled = false}
+                },
+                health = {checker = false}
+            })
+        end
     }
 }
