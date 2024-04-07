@@ -4,6 +4,7 @@
 git clone https://github.com/HeJiaJunPan/neovim-config.git ~/.config/nvim
 ```
 
+```
 ## 配置目录
 ├── init.lua                     -- neovim配置入口
 ├── lazy-lock.json
@@ -26,3 +27,4 @@ git clone https://github.com/HeJiaJunPan/neovim-config.git ~/.config/nvim
 │       ├── package.json
 │       └── snippets
 │           └── python.json
+```
