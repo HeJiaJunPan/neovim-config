@@ -1,16 +1,14 @@
 function run()
     local fileExtension = vim.fn.expand('%:e')
-    local cmd = nil
-    if fileExtension == 'py' then
-        cmd = 'python3 %'
-    elseif fileExtension == 'lua' then
-        cmd = 'lua %'
-    elseif fileExtension == 'js' then
-        cmd = 'node %'
-    elseif fileExtension == 'sh' then
-        cmd = 'sh %'
-    end
-
+    -- 脚本执行命令
+    local executor = {
+        py = 'python3 %',
+        lua = 'lua %',
+        js = 'node %',
+        sh = 'sh %'
+    }
+    
+    local cmd = executor[fileExtension]
     if cmd  then
         return string.format([[<cmd>TermExec cmd="%s"<cr>]], cmd)
     else
