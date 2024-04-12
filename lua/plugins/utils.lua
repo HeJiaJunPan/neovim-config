@@ -96,5 +96,19 @@ return {
         "kylechui/nvim-surround",
         event = "VeryLazy",
         config = true
+    },
+    {
+        -- 替代tsserver LSP，tsserver经常卡死SSH
+        "pmizio/typescript-tools.nvim",
+        ft = {'javascript', 'typescript'},
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "neovim/nvim-lspconfig"
+        },
+        opts = {
+            settings = {
+                complete_function_calls = true
+            }
+        }
     }
 }
