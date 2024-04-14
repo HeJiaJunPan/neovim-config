@@ -1,4 +1,7 @@
-## 安装neovim
+## 依赖要求
+git
+npm
+
 ## 下载配置文件
 ```bash
 git clone https://github.com/HeJiaJunPan/neovim-config.git ~/.config/nvim
@@ -6,6 +9,7 @@ git clone https://github.com/HeJiaJunPan/neovim-config.git ~/.config/nvim
 
 ```
 ## 配置目录
+
 ├── init.lua                     -- neovim配置入口
 ├── lazy-lock.json
 ├── lua
