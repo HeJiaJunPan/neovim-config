@@ -5,6 +5,8 @@ return {
     dependencies = {
         'neovim/nvim-lspconfig',
         'williamboman/mason-lspconfig.nvim',
+        -- 使用JSON设置LSP个性化配置
+        'folke/neoconf.nvim'
     },
     config = function()
     -- LSP服务器列表,键表示服务器名称，值表示服务器配置
@@ -48,6 +50,9 @@ return {
                 vim.lsp.buf.format({ async = true })
             end, "[F]ormat code")
         end
+
+        -- neoconf必须在lsp-config前调用
+        require('neoconf').setup()
         
         -- mason提供LSP安装面板
         require('mason').setup({
