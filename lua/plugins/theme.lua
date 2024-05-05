@@ -23,8 +23,10 @@ local themeConfigs = {
 return {
     themeUrls[themeName],
     dependencies = {
+        -- 状态栏
         'nvim-lualine/lualine.nvim',
         'nvim-tree/nvim-web-devicons',
+        -- 类似vscode的文档面包屑导航
         'utilyre/barbecue.nvim',
         'SmiteshP/nvim-navic',
     },
