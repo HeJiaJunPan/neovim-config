@@ -1,10 +1,12 @@
 return {
     {
+        -- Buffer以Tab形势展示
         "akinsho/bufferline.nvim",
         event = "VeryLazy",
         config = true,
     },
     {
+        -- 缩进线
         "lukas-reineke/indent-blankline.nvim",
         event = "VeryLazy",
         main = "ibl",
@@ -13,11 +15,13 @@ return {
         end
     },
     {
+        -- git增删查改提示符
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         config = true,
     },
     {
+        -- 面板
         "goolord/alpha-nvim",
         config = function()
             local dashboard = require("alpha.themes.dashboard")
@@ -33,6 +37,7 @@ return {
         end
     },
     {
+        -- 当前Buffer中已选中字符/单词，全部高亮
         "RRethy/vim-illuminate",
         event = "VeryLazy",
         config = function()
