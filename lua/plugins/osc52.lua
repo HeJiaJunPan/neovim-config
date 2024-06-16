@@ -1,14 +1,26 @@
 -- 配置剪贴板选项
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard:append('unnamedplus')
+
+-- SSH环境检测，非SSH环境不加载OSC52功能
+if not os.getenv('SSH_TTY') then
+    return {}
+end
+
+-- 自定义粘贴函数
+local paste = function()
+    return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
+end
+
 -- neovim内置OSC52检测
 local ok, clipboard = pcall(require, 'vim.ui.clipboard.osc52')
 if ok then
     vim.g.clipboard = {
         name = 'osc52',
         copy = {['+'] = clipboard.copy('+'), ['*'] = clipboard.copy('*')},
-        paste = {['+'] = clipboard.paste('+'), ['*'] = clipboard.paste('*')}
+        paste = {['+'] = paste, ['*'] = paste}
     }
 
+    -- 内置OSC52，不加载第三方插件
     return {}
 
 -- 当前版本不支持内置OSC52，添加第三方OSC52插件
@@ -25,11 +37,7 @@ else
                     osc52.copy(table.concat(lines, '\n'))
                 end
             end
-
-            local paste = function()
-                return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
-            end
-
+            
             local osc52 = require('osc52')
             osc52.setup({trim = true})
             vim.g.clipboard = {
