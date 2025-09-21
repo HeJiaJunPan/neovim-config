@@ -32,3 +32,6 @@ git clone https://github.com/HeJiaJunPan/neovim-config.git ~/.config/nvim
 │       └── snippets
 │           └── python.json
 ```
+
+## 更新记录
+- 20250922 Neovim0.11+ 使用LSP新版API和blink.cpm替代nvim-cmp
