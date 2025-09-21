@@ -1,3 +1,5 @@
+-- neovim0.11版本前cmp实现
+
 return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
