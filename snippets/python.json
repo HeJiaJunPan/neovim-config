@@ -1,0 +1,7 @@
+{
+    "python file header": {
+        "prefix": "#!/",
+        "body": "#!/usr/bin/env python3\n# -*- coding:utf-8 -*-\n\n$0",
+        "description": "Adds shebang line and file encoding"
+    }
+}
