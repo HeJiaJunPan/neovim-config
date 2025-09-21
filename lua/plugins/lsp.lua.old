@@ -1,3 +1,4 @@
+-- Neovim 0.11 版本前LSP配置
 return {
     'williamboman/mason.nvim',
     cmd = {'Mason'},
