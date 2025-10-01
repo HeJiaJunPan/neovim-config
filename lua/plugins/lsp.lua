@@ -30,12 +30,13 @@ return {
         })
 
         -- mason安装LSP后，通过mason-lspconfig启动LSP服务器
+        -- 默认调用vim.lsp.enable() API启动LSP服务器 下面代码可以省略
         require('mason-lspconfig').setup()
 
         -- 迭代LSP服务器列表，逐个启用LSP服务器
-        for server, config in pairs(servers) do
-            vim.lsp.enable(server)
-        end
+        -- for server, config in pairs(servers) do
+        --    vim.lsp.enable(server)
+        -- end
 
     end
 }
