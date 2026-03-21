@@ -12,10 +12,11 @@ return {
             lua_ls = {},
             jsonls = {},
             -- tsserver = {} ,
-            html = {},
-            cssls = {},
+            -- html = {},
+            -- cssls = {},
             bashls = {},
-            pyright = {}
+            pyright = {},
+            docker_language_server = {}
         }
 
         -- mason提供LSP安装面板
