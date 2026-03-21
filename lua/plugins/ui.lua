@@ -62,6 +62,10 @@ return {
             })
             
             require('noice').setup({
+                cmdline = {
+                    -- 修改命令栏样式为经典模式，可选cmdline_popup
+                    view = 'cmdline'
+                },
                 lsp = {
                     -- 为避免影响性能，关闭lsp.progress功能
                     progress = {enabled = false}
